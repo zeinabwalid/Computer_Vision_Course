@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>514</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tab_sift">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_canny">
+       <attribute name="title">
+        <string>Canny</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_canny_load">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>121</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load Image</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_apply_canny">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>230</y>
+          <width>121</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Apply</string>
+        </property>
+       </widget>
+       <widget class="ImageView" name="label_canny_input" native="true">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>20</y>
+          <width>301</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="ImageView" name="label_canny_output" native="true">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>20</y>
+          <width>311</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_hough">
+       <attribute name="title">
+        <string>Hough</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox_9">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>280</y>
+          <width>751</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Operator Settings</string>
+        </property>
+        <widget class="QWidget" name="horizontalLayoutWidget_5">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>30</y>
+           <width>311</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_61">
+            <property name="text">
+             <string>Select Shapes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_lines">
+            <property name="text">
+             <string>Lines</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_circles">
+            <property name="text">
+             <string>Circles</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_10">
+         <property name="geometry">
+          <rect>
+           <x>380</x>
+           <y>30</y>
+           <width>311</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Additional Turnable Parameters</string>
+         </property>
+         <widget class="QTextEdit" name="textEdit_7">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>20</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit_8">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>40</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_21">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>20</y>
+            <width>101</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>lines threshold</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_23">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>40</y>
+            <width>101</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Circles threshold</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="label_hough_input">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>30</y>
+          <width>301</width>
+          <height>231</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string>Input image</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_hough_output">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>30</y>
+          <width>291</width>
+          <height>231</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string>Output image</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_hough_load">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>121</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load Image</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_apply_hough">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>210</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Apply</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Active Contour</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_active_contours_load">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>121</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load Image</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_active_contours_input">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>30</y>
+          <width>200</width>
+          <height>200</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string>Input image</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_apply_active_contours">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>90</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Start Snake ALg </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_clear_anchors">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>40</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Display Contour </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_reset_anchors">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>150</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>270</y>
+          <width>301</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Contour Settings</string>
+        </property>
+        <widget class="QLabel" name="label_20">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>21</y>
+           <width>61</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Alpha</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_22">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>71</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Gamma</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_24">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>41</y>
+           <width>81</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Beta</string>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit_beta">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>40</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit_alpha">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>20</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit_gamma">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>60</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit_iterations">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>80</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;100&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>81</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Number of iterations</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="label_active_contours_output">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>30</y>
+          <width>200</width>
+          <height>200</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string>Output image</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ImageView</class>
+   <extends>QWidget</extends>
+   <header location="global">pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
